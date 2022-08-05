@@ -17,26 +17,29 @@ export interface MyLabelProps {
 	 * This is the color of the label
 	 */
 	color?: "primary" | "secondary" | "tertiary";
-    /**
-     * This is the custom color of the label
-     */
+	/**
+	 * This is the custom color of the label
+	 */
 	fontColor?: string;
-    /**
-     * This is the custom color of the label
-     */
+	/**
+	 * This is the custom color of the label
+	 */
 	backgroundColor?: string;
 }
 
 export const MyLabel = ({
-	label = "No Label",
+	label = "No Label provided",
 	size = "normal",
 	allCaps = false,
 	color = "primary",
-    fontColor,
-	backgroundColor
+	fontColor,
+	backgroundColor,
 }: MyLabelProps) => {
 	return (
-		<span className={["label", size, `text-${color}`].join(" ")} style={{color: fontColor, backgroundColor}}>
+		<span
+			className={["label", size, `text-${color}`].join(" ")}
+			style={{ color: fontColor, backgroundColor }}
+		>
 			{allCaps ? label.toUpperCase() : label}
 		</span>
 	);
